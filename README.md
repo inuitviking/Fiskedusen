@@ -19,7 +19,7 @@ db.CreateCategory("Cod");
 ```
 Create a product:
 ```c#
-db.CreateProduct("Atlantic Cod", db.Categories[0], 119.95); // In this example, Danish-ish prices where in mind
+db.CreateProduct("Atlantic Cod", db.Categories[0], 119.95); // In this example, Danish-ish prices were in mind
 ```
 A campaign is probably best created this way (Remember `using System.Collections.Generic;`):
 ```c#
