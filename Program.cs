@@ -24,6 +24,10 @@ namespace Fiskedusen
             campaignCategories.Add(db.Categories[0]);
             db.CreateCampaign("Auguster Kampagne", start, end, 0.5, campaignCategories);
 
+            // Create customer and subsciption for illustrational purposes
+            db.CreateCustomer("Jan Erik Jensen", "Vej 98", "jej@eksempel.dk");
+            db.CreateSubscription(start, end, db.Customers[0], 29.95);
+
             // Display campaign information
             Console.WriteLine("Campaign information:");
             Console.WriteLine(db.Campaigns[0].Name+" | "+db.Campaigns[0].Start.ToString()+" | "+db.Campaigns[0].End.ToString()+" | "+(db.Campaigns[0].Rate*100)+"%");
@@ -54,6 +58,15 @@ namespace Fiskedusen
             }
 
             Console.WriteLine("----");
+
+            Console.WriteLine("Display customers:");
+            for(int k = 0; k < db.Customers.Count; k++){
+                Console.WriteLine(db.Customers[k].Name+" | "+db.Customers[k].Address+" | "+db.Customers[k].Email);
+            }
+            Console.WriteLine("Display subscriptions:");
+            for(int l = 0; l < db.Subscriptions.Count; l++){
+                Console.WriteLine(start+" | "+end+" | "+db.Subscriptions[l].Customers.Email+" | "+db.Subscriptions[l].Price+"kr");
+            }
         }
     }
 }
