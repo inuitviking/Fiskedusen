@@ -55,5 +55,17 @@ namespace Fiskehandler
             this.Products.Add(product);
         }
 
+        public void CreateCustomter(string name, string address, string email)
+        {
+            Customer customer = new Customer(name, address, email);
+            this.Customers.Add(customer);
+        }
+
+        public void CreateSubscription(DateTime start, DateTime end, Customer customer, double price)
+        {
+            Subscription subscription = new Subscription(start, end, customer, price);
+            this.Subscriptions.Add(subscription);
+        }
+
     }
 }
