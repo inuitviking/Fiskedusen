@@ -7,7 +7,7 @@ namespace Fiskehandler
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
         public Customer Customers { get; }
-        public int Price { get; set; }
+        public double Price { get; set; }
 
         /// <summary>
         /// Creates a new Subscription
@@ -16,7 +16,7 @@ namespace Fiskehandler
         /// <param name="End"></param>
         /// <param name="Customer"></param>
         /// <param name="Price"></param>
-        public Subscription(DateTime Start, DateTime End, Customer Customer, int Price )
+        public Subscription(DateTime Start, DateTime End, Customer Customer, double Price )
         {
             this.Start = Start;
             this.End = End;
