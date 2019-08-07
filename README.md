@@ -29,6 +29,14 @@ List<Category> campaignCategories = new List<Category>();                       
 campaignCategories.Add(db.Categories[0]);                                       // Add campaigns to list
 db.CreateCampaign("Auguster Kampagne", start, end, 0.5, campaignCategories);    // Create campaign
 ```
+Create a customer:
+```c#
+db.CreateCustomer("Jan Erik Jensen", "Vej 98", "jej@eksempel.dk");
+```
+Create a subscription:
+```c#
+db.CreateSubscription(start, end, db.Customers[0], 29.95);
+```
 ### Displaying values from created items
 Displaying categories (Remember `using System.Linq;`):
 ```c#
@@ -53,5 +61,19 @@ Console.WriteLine("Categories regarding campaign:");
 for (int i = 0; i < db.Campaigns[0].Categories.Count; i++)
 {
     Console.WriteLine(db.Campaigns[0].Categories[i].Name);
+}
+```
+Displaying customers:
+```c#
+Console.WriteLine("Display customers:");
+for(int k = 0; k < db.Customers.Count; k++){
+    Console.WriteLine(db.Customers[k].Name+" | "+db.Customers[k].Address+" | "+db.Customers[k].Email);
+}
+```
+Displaying Subscriptions:
+```c#
+Console.WriteLine("Display subscriptions:");
+for(int l = 0; l < db.Subscriptions.Count; l++){
+    Console.WriteLine(start+" | "+end+" | "+db.Subscriptions[l].Customers.Email+" | "+db.Subscriptions[l].Price+"kr");
 }
 ```
